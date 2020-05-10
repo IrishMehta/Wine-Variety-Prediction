@@ -8,13 +8,16 @@ Predicting Wine Variety based on Wine Reviews
 > This dataset is an imbalanced dataset consisting of over 28 varieties of wine and *82,687* reviews of different wines
 
 ### Prediction of wine variety
+
     * Model used : SVM classifier
     
-    * Features Used for training: Columns `review_description` and `review_title`
+    * Features used for training: Columns `review_description` and `review_title`
     
     * Accuracy attained: 96.3% on the training set
     
-    *Parameters Used (Hypertuning): `C= , gamma= , kernel=`
+    * Submission test set with predicted varieties is *submission.csv*
+    
+    * Parameters Used (Hypertuning): `C= , gamma= , kernel=`
     
 ### Insights from Data
 
@@ -22,7 +25,7 @@ Predicting Wine Variety based on Wine Reviews
 
 ![ScatterPlot](scatter_plot_point_price.png)
 
-2. The top rated wineries, countries and varities are
+2. The top rated wineries, countries and varieties are
 
 | Countries        | Wineries           | Varieties  |
 | ---------------- |:------------------:| -----:|
@@ -42,3 +45,11 @@ Predicting Wine Variety based on Wine Reviews
 
 ![Country by reviews](anon_review_count.png)
 
+
+# Limitations of the code
+
+* The SVM algorithm is extremely inefficient when the input data exceeds a certain dimension. This dataset consists of mostly string columns, which cannot be used as an input to the model, hence converting each string to a vector using encoding or tokenization shoots the dimensionality of the data to such an extent that using it for training becomes computationally expensive
+
+* I have usef IF-IDF for vectorizing the `review_description` column, limiting it to a maximum of 15,000 features.
+
+* Due to restrictions in computational power, the other feature columns could not be considered, which would have been a more practical and realistic scenario to consider and implement.
