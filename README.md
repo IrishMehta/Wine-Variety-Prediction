@@ -50,6 +50,6 @@ Predicting Wine Variety based on Wine Reviews
 
 * The SVM algorithm is extremely inefficient when the input data exceeds a certain dimension. This dataset consists of mostly string columns, which cannot be used as an input to the model, hence converting each string to a vector using encoding or tokenization shoots the dimensionality of the data to such an extent that using it for training becomes computationally expensive
 
-* I have usef IF-IDF for vectorizing the `review_description` column, limiting it to a maximum of 15,000 features.
+* I have usef HashingVectorizer for vectorizing the `review_description` & `review_title` column, limiting it to a maximum of 500 features each.
 
 * Due to restrictions in computational power, the other feature columns could not be considered, which would have been a more practical and realistic scenario to consider and implement.
