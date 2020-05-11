@@ -17,7 +17,7 @@ Predicting Wine Variety based on Wine Reviews
     
     * Submission test set with predicted varieties is *submission.csv*
     
-    * Parameters Used (Hypertuning): `C= , gamma= , kernel=`
+    * Parameters Used (Hypertuning): `C=1, kernel='linear'
     
 ### Insights from Data
 
